@@ -277,8 +277,14 @@ button:hover{
 
 </div>
 
-<script>
+<script type="module">
 
+import { database } from "./firebase.js";
+
+import { ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+window.database = database;
+    
 const company = document.getElementById("company");
 const phone = document.getElementById("phone");
 const email = document.getElementById("email");
