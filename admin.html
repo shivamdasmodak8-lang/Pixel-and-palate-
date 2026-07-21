@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Super Admin | Pixel & Palette</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #080808;
+    border-right: 1px solid #333;
+    padding: 30px 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.logo span {
+    color: #777;
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+}
+
+.menu a:hover {
+    border: 1px solid #555;
+    background: #111;
+}
+
+/* MAIN CONTENT */
+
+.main {
+    margin-left: 250px;
+    padding: 40px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+}
+
+.admin-badge {
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    font-size: 12px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: #0c0c0c;
+    border: 1px solid #333;
+    padding: 25px;
+}
+
+.card h3 {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.card strong {
+    font-size: 30px;
+}
+
+/* SETTINGS */
+
+.settings {
+    background: #080808;
+    border: 1px solid #333;
+    padding: 30px;
+    max-width: 800px;
+}
+
+.settings h2 {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    background: #000;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.save-btn {
+    padding: 13px 25px;
+    background: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.save-btn:hover {
+    background: #ccc;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 25px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        PIXEL <span>&</span> PALETTE
+    </div>
+
+    <div class="menu">
+
+        <a href="#">Dashboard</a>
+
+        <a href="#">Website Details</a>
+
+        <a href="#">Bookings</a>
+
+        <a href="#">Clients</a>
+
+        <a href="#">Team Members</a>
+
+        <a href="#">Payments</a>
+
+        <a href="#">Gallery</a>
+
+        <a href="#">Invoices</a>
+
+        <a href="#">Settings</a>
+
+    </div>
+
+</div>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <div class="topbar">
+
+        <h1>Super Admin Dashboard</h1>
+
+        <div class="admin-badge">
+            SUPER ADMIN
+        </div>
+
+    </div>
+
+
+    <!-- DASHBOARD CARDS -->
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>TOTAL BOOKINGS</h3>
+            <strong>0</strong>
+        </div>
+
+        <div class="card">
+            <h3>ACTIVE CLIENTS</h3>
+            <strong>0</strong>
+        </div>
+
+        <div class="card">
+            <h3>TEAM MEMBERS</h3>
+            <strong>0</strong>
+        </div>
+
+        <div class="card">
+            <h3>PENDING PAYMENTS</h3>
+            <strong>₹0</strong>
+        </div>
+
+    </div>
+
+
+    <!-- WEBSITE DETAILS -->
+
+    <div class="settings">
+
+        <h2>Website Details</h2>
+
+        <div class="form-group">
+
+            <label>Company Name</label>
+
+            <input
+                type="text"
+                value="Pixel & Palette"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Phone Number</label>
+
+            <input
+                type="text"
+                placeholder="Enter phone number"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                placeholder="Enter email address"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>About Company</label>
+
+            <textarea
+                placeholder="Write about your company..."
+            ></textarea>
+
+        </div>
+
+
+        <button class="save-btn">
+            SAVE CHANGES
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+  </html>
