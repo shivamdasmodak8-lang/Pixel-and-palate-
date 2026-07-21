@@ -238,6 +238,32 @@
     <footer>
         © 2026 Pixel & Palette. All Rights Reserved.
     </footer>
+<script>
 
+window.onload = function(){
+
+    const savedCompany = localStorage.getItem("company");
+    const savedLogo = localStorage.getItem("logo");
+
+    if(savedCompany){
+
+        document.querySelector(".logo").innerText = savedCompany;
+        document.querySelector(".hero h1").innerText = savedCompany;
+
+    }
+
+    if(savedLogo){
+
+        const logoElement = document.querySelector(".logo");
+
+        logoElement.innerHTML =
+        '<img src="' + savedLogo + '" style="height:40px; max-width:180px; object-fit:contain;">';
+
+    }
+
+};
+
+</script>
+    
 </body>
 </html>
