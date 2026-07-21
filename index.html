@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pixel & Palette | Photography & Videography</title>
+
+    <meta name="description" content="Pixel & Palette - Professional photography and videography for weddings, events and special moments.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0b0f;
+            color: white;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111116;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+                url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 85px);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #d4af37;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #17171d;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #292930;
+        }
+
+        .card h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        .portfolio {
+            background: #111116;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #222;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .portfolio-item img:hover {
+            transform: scale(1.08);
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #bbb;
+            margin: 12px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050507;
+            color: #888;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            Pixel <span>&</span> Palette
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div>
+            <h1>We Capture <span>Moments</span></h1>
+
+            <p>
+                Professional Photography & Videography for your most beautiful moments.
+            </p>
+
+            <a href="#contact" class="btn">
+                Book Your Event
+            </a>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">
+            Our <span>Services</span>
+        </h2>
+
+        <div class="services">
+
+            <div class="card">
+                <h3>Wedding Photography</h3>
+                <p>
+                    Beautifully capturing every emotion, smile and unforgettable moment of your special day.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Wedding Videography</h3>
+                <p>
+                    Cinematic wedding films, teaser videos, highlight films and complete wedding videos.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Event Photography</h3>
+                <p>
+                    Professional photography coverage for birthdays, ceremonies, parties and special events.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Creative Editing</h3>
+                <p>
+                    Professional photo and video editing to turn your memories into something truly special.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+
+        <h2 class="section-title">
+            Our <span>Portfolio</span>
+        </h2>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80">
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80">
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1000&q=80">
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Let's Create Something <span>Beautiful</span>
+        </h2>
+
+        <p>Ready to capture your special moments?</p>
+
+        <p>📞 Contact us for bookings and enquiries.</p>
+
+        <br>
+
+        <a href="mailto:pixelpalette0725@gmail.com" class="btn">
+            Contact Us
+        </a>
+
+    </section>
+
+    <footer>
+        © 2026 Pixel & Palette. All Rights Reserved.
+    </footer>
+
+</body>
+  </html>
