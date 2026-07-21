@@ -32,6 +32,12 @@
             letter-spacing: 2px;
         }
 
+        .logo img {
+            height: 40px;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -128,6 +134,7 @@
         }
 
         @media (max-width: 700px) {
+
             header {
                 flex-direction: column;
                 gap: 15px;
@@ -152,7 +159,10 @@
 <body>
 
     <header>
-        <div class="logo">PIXEL & PALETTE</div>
+
+        <div class="logo">
+            PIXEL & PALETTE
+        </div>
 
         <nav>
             <a href="#home">HOME</a>
@@ -160,10 +170,13 @@
             <a href="#about">ABOUT</a>
             <a href="#contact">CONTACT</a>
         </nav>
+
     </header>
 
     <div class="hero" id="home">
+
         <div>
+
             <h1>PIXEL & PALETTE</h1>
 
             <p>
@@ -173,7 +186,9 @@
             <a href="#contact" class="button">
                 BOOK NOW
             </a>
+
         </div>
+
     </div>
 
     <section id="services">
@@ -225,7 +240,9 @@
 
         <h2>LET'S CREATE SOMETHING BEAUTIFUL</h2>
 
-        <p>Contact Pixel & Palette for bookings and enquiries.</p>
+        <p>
+            Contact Pixel & Palette for bookings and enquiries.
+        </p>
 
         <br>
 
@@ -238,32 +255,69 @@
     <footer>
         © 2026 Pixel & Palette. All Rights Reserved.
     </footer>
-<script>
 
-window.onload = function(){
+    <script>
 
-    const savedCompany = localStorage.getItem("company");
-    const savedLogo = localStorage.getItem("logo");
+        window.onload = function() {
 
-    if(savedCompany){
+            const savedCompany = localStorage.getItem("company");
+            const savedLogo = localStorage.getItem("logo");
+            const savedPhone = localStorage.getItem("phone");
+            const savedEmail = localStorage.getItem("email");
+            const savedAbout = localStorage.getItem("about");
 
-        document.querySelector(".logo").innerText = savedCompany;
-        document.querySelector(".hero h1").innerText = savedCompany;
+            if (savedCompany) {
 
-    }
+                document.querySelector(".logo").innerText = savedCompany;
+                document.querySelector(".hero h1").innerText = savedCompany;
 
-    if(savedLogo){
+            }
 
-        const logoElement = document.querySelector(".logo");
+            if (savedLogo) {
 
-        logoElement.innerHTML =
-        '<img src="' + savedLogo + '" style="height:40px; max-width:180px; object-fit:contain;">';
+                const logoElement = document.querySelector(".logo");
 
-    }
+                logoElement.innerHTML =
+                '<img src="' + savedLogo + '" alt="Company Logo">';
 
-};
+            }
 
-</script>
-    
+            if (savedPhone) {
+
+                const contactText =
+                document.querySelector(".contact p");
+
+                contactText.innerText =
+                "Phone: " + savedPhone;
+
+            }
+
+            if (savedEmail) {
+
+                const contactButton =
+                document.querySelector(".contact .button");
+
+                contactButton.innerText =
+                savedEmail;
+
+                contactButton.href =
+                "mailto:" + savedEmail;
+
+            }
+
+            if (savedAbout) {
+
+                const aboutText =
+                document.querySelector(".about p");
+
+                aboutText.innerText =
+                savedAbout;
+
+            }
+
+        };
+
+    </script>
+
 </body>
 </html>
