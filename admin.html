@@ -288,26 +288,6 @@ const logoPreview = document.getElementById("logoPreview");
 const sidebarCompany = document.getElementById("sidebarCompany");
 const message = document.getElementById("message");
 
-window.onload = function(){
-
-    company.value = localStorage.getItem("company") || "Pixel & Palette";
-    phone.value = localStorage.getItem("phone") || "";
-    email.value = localStorage.getItem("email") || "";
-    about.value = localStorage.getItem("about") || "";
-
-    const savedLogo = localStorage.getItem("logo");
-
-    if(savedLogo){
-        logoPreview.src = savedLogo;
-        logoPreview.style.display = "block";
-    }else{
-        logoPreview.style.display = "none";
-    }
-
-    sidebarCompany.innerText = company.value;
-
-};
-
 logoUpload.addEventListener("change", function(){
 
     const file = this.files[0];
