@@ -25,11 +25,22 @@ body{
     padding:30px 20px;
 }
 
-.logo{
-    font-size:20px;
+.logo-box{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.logo-box img{
+    width:100px;
+    max-height:80px;
+    object-fit:contain;
+    margin-bottom:12px;
+}
+
+.logo-text{
+    font-size:18px;
     font-weight:bold;
     letter-spacing:2px;
-    margin-bottom:40px;
 }
 
 .menu a{
@@ -38,12 +49,11 @@ body{
     text-decoration:none;
     padding:14px;
     margin-bottom:8px;
-    border:1px solid transparent;
 }
 
 .menu a:hover{
-    border-color:#555;
     background:#111;
+    border:1px solid #444;
 }
 
 .main{
@@ -94,6 +104,7 @@ body{
     background:#080808;
     border:1px solid #333;
     padding:30px;
+    margin-bottom:30px;
 }
 
 .settings h2{
@@ -132,9 +143,12 @@ button{
     font-weight:bold;
 }
 
+button:hover{
+    background:#ccc;
+}
+
 #message{
     margin-top:18px;
-    color:#fff;
 }
 
 @media(max-width:800px){
@@ -162,7 +176,6 @@ button{
     .cards{
         grid-template-columns:1fr;
     }
-
 }
 </style>
 </head>
@@ -171,8 +184,14 @@ button{
 
 <div class="sidebar">
 
-    <div class="logo">
-        PIXEL & PALETTE
+    <div class="logo-box">
+
+        <img id="logoPreview" src="" alt="Logo">
+
+        <div class="logo-text" id="sidebarCompany">
+            PIXEL & PALETTE
+        </div>
+
     </div>
 
     <div class="menu">
@@ -243,6 +262,11 @@ button{
             <textarea id="about"></textarea>
         </div>
 
+        <div class="group">
+            <label>Upload Company Logo</label>
+            <input id="logoUpload" type="file" accept="image/*">
+        </div>
+
         <button onclick="saveChanges()">
             SAVE CHANGES
         </button>
@@ -259,6 +283,9 @@ const company = document.getElementById("company");
 const phone = document.getElementById("phone");
 const email = document.getElementById("email");
 const about = document.getElementById("about");
+const logoUpload = document.getElementById("logoUpload");
+const logoPreview = document.getElementById("logoPreview");
+const sidebarCompany = document.getElementById("sidebarCompany");
 const message = document.getElementById("message");
 
 window.onload = function(){
@@ -268,7 +295,41 @@ window.onload = function(){
     email.value = localStorage.getItem("email") || "";
     about.value = localStorage.getItem("about") || "";
 
+    const savedLogo = localStorage.getItem("logo");
+
+    if(savedLogo){
+        logoPreview.src = savedLogo;
+        logoPreview.style.display = "block";
+    }else{
+        logoPreview.style.display = "none";
+    }
+
+    sidebarCompany.innerText = company.value;
+
 };
+
+logoUpload.addEventListener("change", function(){
+
+    const file = this.files[0];
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            logoPreview.src = e.target.result;
+            logoPreview.style.display = "block";
+
+            localStorage.setItem("logo", e.target.result);
+
+        };
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
 
 function saveChanges(){
 
@@ -277,13 +338,15 @@ function saveChanges(){
     localStorage.setItem("email", email.value);
     localStorage.setItem("about", about.value);
 
+    sidebarCompany.innerText = company.value;
+
     message.innerText = "✓ Changes saved successfully";
 
     setTimeout(function(){
 
         message.innerText = "";
 
-    }, 3000);
+    },3000);
 
 }
 
